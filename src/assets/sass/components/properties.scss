@@ -1,0 +1,11 @@
+.properties {
+	background-color: rgba($level-colour, 0.2);
+	font-size: 1rem;
+	font-weight: bold;
+	color: rgba($level-colour, 0.8);
+}
+
+.border-bottom-1 {
+	border-bottom: 1px solid $level-colour;
+	cursor: pointer;
+}

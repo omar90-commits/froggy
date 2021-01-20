@@ -1,0 +1,34 @@
+.editor {
+	border-radius: 4px;
+	background-color: $editor-colour;
+
+	pre {
+		color: darken($editor-colour, 43);
+		font-size: 17px;
+	}
+
+	textarea {
+		width: calc(100% - 50px);
+		outline: none;
+		border: none;
+		resize: none;
+		overflow: auto;
+	}
+
+	.textarea-line {
+		height: 28px;
+	}
+
+	.textarea-double-line {
+		height: 56px;
+	}
+}
+
+.editor__numbers-lines {
+	background-color: darken($editor-colour, 27);
+
+	&> p {
+		text-align: right;
+		color: darken($editor-colour, 5);
+	}
+}

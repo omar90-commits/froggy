@@ -1,0 +1,12 @@
+.levels-editor {
+	background-color: #43A047;
+	color: white;
+}
+
+.levels__titles {
+	font-family: 'Fredoka One', cursive;
+	opacity: .8;
+}
+
+@import '../layaut/level-counter.scss';
+@import '../layaut/editor.scss';

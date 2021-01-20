@@ -1,0 +1,12 @@
+@mixin level($w, $bg, $bR, $cursor) {
+	width: $w;
+	background-color: $bg;
+	border-radius: $bR;
+	cursor: $cursor;
+}
+
+@mixin flex($display, $properti1, $properti2) {
+	display: $display;
+	justify-content: $properti1;
+	align-items: $properti2;
+}

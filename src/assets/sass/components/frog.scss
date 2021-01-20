@@ -1,0 +1,81 @@
+.bg-frog {
+  z-index: 1;
+  width: 80px;
+  height: 70px;
+  position: absolute;
+  left: 5%;
+  top: calc(18% - 87px);
+  background-repeat: no-repeat;
+}
+
+.animate-bg_frog {
+  animation: frog-animate .5s alternate infinite;
+}
+
+@keyframes frog-animate {
+  from {
+    transform: scale(1.05);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.frog-animate {
+  animation: animationFrog .2s forwards;
+}
+
+@keyframes animationFrog {
+
+  $j: 0;
+  $translate: 0;
+
+  @for $i from 1 through 11 {
+
+    @if $i != 1 {
+
+      $j: $j + 10;
+      
+      @if $i <= 4 { $translate: $translate + 15; } 
+      @else if $i <= 7 { $translate: $translate - 15; } 
+      @else { $translate: $translate - 50; }
+
+    } @else if $i == 11 { $j: 100; }
+
+    #{$j}% { transform: translateY(#{$translate}px); }
+  }
+}
+
+.bg-frog-green {
+  background-image: url('../images/frog-green.svg');
+}
+
+.bg-frog-yellow {
+  background-image: url('../images/frog-yellow.svg');
+}
+
+.bg-frog-red {
+  background-image: url('../images/frog-red.svg');
+  
+}
+
+@media (max-width: 991px) {
+  .bg-frog {
+    width: 60px;
+    height: 50px;
+  }
+
+  .bg-frog-green {
+    background-image: url('../images/frog-green_60x50.svg');
+  }
+
+  .bg-frog-yellow {
+    background-image: url('../images/frog-yellow_60x50.svg');
+  }
+
+  .bg-frog-red {
+    background-image: url('../images/frog-red_60x50.svg');
+    
+  }
+}

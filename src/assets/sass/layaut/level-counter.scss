@@ -1,0 +1,72 @@
+.level-counter {
+	@include level(210px, rgba($level-colour, .2), 4px, pointer);
+	color: rgba($level-colour, .8);
+
+	span {
+		display: inline-block;
+	}
+
+	.level {
+		&:hover {
+			background-color: rgba($level-colour, .4);
+		}
+	}
+
+	.arrow-left-emptyHover {
+		border-right: 1px solid rgba($level-colour, .2);
+
+		.triangule {
+			border-right: 11px solid rgba($level-colour, .3);
+		}
+	}
+
+	.arrow-right {
+		border-left: 1px solid rgba($level-colour, .2);
+
+		&:hover {
+			background-color: rgba($level-colour, .4);
+		}
+
+		.triangule {
+			border-left: 11px solid rgba($level-colour, .7);
+		}
+	}
+
+	.triangule {
+		width: 0;
+  		height: 0;
+		border-top: 7px solid transparent;
+  		border-bottom: 7px solid transparent;
+	}
+
+	// Agregada desde javascript
+	.arrow-right-emptyHover {
+		border-left: 1px solid rgba($level-colour, .2);
+
+		.triangule {
+			border-left: 11px solid rgba($level-colour, .3);
+		}
+	}
+
+	// Agregada desde javascript
+	.arrow-left {
+		border-right: 1px solid rgba($level-colour, .2);
+
+		&:hover {
+			background-color: rgba($level-colour, .4);
+		}
+
+		.triangule {
+			border-right: 11px solid rgba($level-colour, .7);
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.level-counter{
+		span {
+			@include flex(flex, center, center);
+			height: 100%;
+		}
+	}
+}

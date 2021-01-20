@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <title>FROGGY</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <div class="row no-gutters">
+    	<div class="col-6 levels-editor p-4">
+    		<header class="d-lg-flex justify-content-md-between mb-5">
+    			<h3 class="levels__titles">FLEXBOX FROGGY</h3>
+
+    			<div class="level-counter d-flex justify-content-between">
+    				<span class="arrow-left-emptyHover py-1 px-2 align-self-lg-center">
+    					<span class="triangule"></span>
+    				</span>
+
+    				<span class="py-1 w-100 px-lg-2 text-center level align-self-lg-center">Nivel 1 de 24 ▾</span>
+    				<span class="arrow-right py-1 px-2 align-self-lg-center">
+    					<span class="triangule"></span>
+    				</span>
+    			</div>
+    		</header>
+
+    		<main>
+    			<p>Bienvenido a Flexbox Froggy, un juego donde ayudarás a Froggy y a sus amigos escribiendo código CSS. Guía a esta rana hacia la hoja de lirio en la derecha, usando la propiedad <span class="properties px-2 border-bottom-1">justify-content</span>, la cual alinea elementos horizontalmente y acepta los siguientes valores:</p>
+
+    			<ul>
+    				<li><span class="properties px-2">flex-start</span>: Alinea elementos al lado izquierdo del contenedor.</li>
+    				<li><span class="properties px-2">flex-end</span>: Alinea elementos al lado derecho del contenedor.</li>
+    				<li><span class="properties px-2">center</span>: Alinea elementos en el centro del contenedor.</li>
+    				<li><span class="properties px-2">space-between</span>: Muestra elementos con la misma distancia entre ellos.</li>
+    				<li><span class="properties px-2">space-around</span>: Muestra elementos con la misma separación alrededor de ellos.</li>
+    			</ul>
+
+    			<p>Por ejemplo, <span class="properties px-2">justify-content: flex-end;</span> moverá la rana a la derecha.</p>
+    		</main>
+
+			<aside class="d-flex editor">
+    			<div class="editor__numbers-lines p-2">
+              <p class="mb-1">1</p>
+              <p class="mb-1">2</p>
+              <p class="mb-1">3</p>
+              <p class="mb-1">4</p>
+              <p class="mb-1">5</p>
+              <p class="mb-1">6</p>
+              <p class="mb-1">7</p>
+              <p class="mb-1">8</p>
+              <p class="mb-1">9</p>
+              <p class="mb-1">10</p>
+          </div>
+
+    			<div class="w-100 d-flex flex-column justify-content-between align-items-start">
+              <div class="w-100 py-2">
+                  <pre class="mb-1 ml-2">#pond {</pre>
+                  <pre class="ml-4 mb-0">display: flex;</pre>
+                  <textarea class="ml-4 textarea-line" autofocus autocapitalize="none"></textarea>
+                  <pre class="ml-2">}</pre>            
+              </div>
+
+              <button class="btn btn-danger align-self-end mb-3 mr-3">Siguiente</button>         
+          </div>
+			</aside>
+
+    		<footer class="mt-4" style="opacity: .8; font-size: .8rem;">
+    			<p>Flexbox Froggy es una creación de Codepip • GitHub • Twitter • </p>
+    		</footer>
+    	</div>
+
+    	<div class="col-6 pond">
+        <div class="bg-frog animate-bg_frog bg-frog-green"></div>
+        <div class="bg-lilypad bg-lilypad-green"></div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            // =====================================
+            // Hover - Popover
+            // =====================================
+
+            $('.border-bottom-1').popover({
+                content: 'xxx', 
+                trigger: "hover",
+                placement: "bottom",
+            });
+
+            $(".border-bottom-1").hover(function(){
+
+                const popoverBody = Array.from($(".popover")[0].children)[2];
+
+                const html = `
+                    <p class="mb-1">alinea los elemntos flex a lo largo del eje principal.</p>
+
+                    <span class="properties px-2">flex-start (default)</span>
+                    <span class="properties px-2">flex-end</span>
+                    <span class="properties px-2">center</span>
+                   
+                    <br />
+                    <p class="mb-1"></p>
+
+                    <span class="properties px-2">space-between</span>
+                    <span class="properties px-2">space-around</span>
+                `;
+                
+                state = true;
+                popoverBody.innerHTML = html;
+            });
+
+            // =====================================
+            // Niveles - Popover
+            // =====================================
+
+
+            $('.level').popover({
+                content: 'Niveles', 
+                trigger: "click",
+                placement: "bottom",
+            });
+
+            $(".level").click(function(){
+
+                const popoverBody = Array.from($(".popover")[0].children)[2];
+
+                const html = `
+                    <div class="grid pt-2">
+                       <span class="level active">1</span>
+                       <span class="level">2</span>
+                       <span class="level">3</span>
+                       <span class="level">4</span>
+                       <span class="level">5</span>
+                       <span class="level">6</span>
+                       <span class="level">7</span>
+                       <span class="level">8</span>
+                       <span class="level">9</span>
+                       <span class="level">10</span>
+                       <span class="level">11</span>
+                       <span class="level">12</span>
+                       <span class="level">13</span>
+                       <span class="level">14</span>
+                       <span class="level">15</span>
+                       <span class="level">16</span>
+                       <span class="level">17</span>
+                       <span class="level">18</span>
+                       <span class="level">19</span>
+                       <span class="level">20</span>
+                       <span class="level">21</span>
+                       <span class="level">22</span>
+                       <span class="level">23</span>
+                       <span class="level">24</span>
+                    </div>
+
+                    <p class="text-center mb-1 mt-3 reset">Reiniciar</p> 
+                `;
+                
+                popoverBody.innerHTML = html;
+            });
+        });
+    </script>
+    <script type="text/javascript" src="/bundle.js"></script>
+  </body>
+</html>
